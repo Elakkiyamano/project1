@@ -1,0 +1,77 @@
+/* h1{
+  color: blueviolet;
+  background-color: aqua;
+}
+h2{
+  color: blue;
+  background-color: brown;
+} */
+
+/* 
+  ul,li,h1{
+    display: inline;
+     margin-left: 150px;
+     justify-content: space-around;
+     background-color: skyblue;
+     padding: 10px;
+  }
+
+nav{
+  color:aqua;
+  padding: 20px;
+  
+} */
+
+h2{
+  /* color: aquamarine;
+  background-color: blueviolet; */
+   /* height:200px; */
+  /* width:100px; */
+    justify-content: space-around;
+  display: flex; 
+   flex-wrap: wrap;
+  align-items: center;
+  color: black;
+  background-color: aqua;
+   
+    
+
+}
+
+/* content h2{
+  width: 200px;
+  height: 250px;
+  padding:
+} */
+
+img{
+  color: aqua; 
+  justify-content: space-around;
+  margin-left: 500px;
+  border-top-left-radius: 70px;
+  padding:30px;
+  border-color: pink; 
+  border-width: 50px;
+  border-style: ridge;
+  background-color: antiquewhite;
+  /* margin:10px; */
+
+  
+}
+
+h3{
+  margin-left: 525px;
+  color: blue;
+}
+
+.suji{
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  
+}
+
+/* .ela{
+  display:flex;
+  justify-content: space-around;
+} */
