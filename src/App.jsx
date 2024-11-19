@@ -11,7 +11,7 @@ import "./App.css";
 // import FormReact from "./component/FormReact";
 // import ReactFormHook from "./component/ReactFormHook";
 import TodoList from "./component/TodoList";
-import Chatbox  from "./component/ChatBox";
+// import Chatbox  from "./component/ChatBox";
 
 function App() {
 
@@ -82,8 +82,8 @@ function App() {
             {/* <FormReact/>
 
             <ReactFormHook/> */}
-            <TodoList/>
-            <chatBox/>
+            {/* <TodoList/>
+            <chatBox/> */}
 
 
 
