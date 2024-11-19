@@ -1,5 +1,8 @@
 import React, { useEffect , useState } from "react";
-import axios from "axios"
+import axios from "axios";
+import {MdEdit} from "react-icons/md";
+import {MdDeleteForever} from "react-icons/md";
+
 
 function TodoList(){
 
@@ -20,42 +23,51 @@ function TodoList(){
 
     },[]);
     const handleinput = (e) =>{
+        setinputdata(e.target.value)
     }
 
     const handlesend = async () =>{
+        let body = {
+            task: inputdata,
+        }
+        let res = await axios.post("http://localhost:3000/todoList",body)
+        alert("success")
+        handlefetch()
     }
     const handledelete = async (id) => {
         console.log(id)
-        let res = await axios.delete("http://localhost:3000/todoList/${id}")
+        let res = await axios.delete(`http://localhost:3000/todoList/${id}`)
         alert("deleted success")
         handlefetch()
 
     }
-    const handleedit = async (i) => {
-        let newdata = promp("enter u r update task",data[i].task);
+    const hndleedit = async (i) => {
+        let newdata = prompt("enter u r update task",data[i].task);
         let body = {
             id: data[i].id,
-            task: newtdata
+            task: newdata
         };
-        let res = await axios.put('http://localhost:3000/todoList/${data[i].id}',body)
+        let res = await axios.put(`http://localhost:3000/todoList/${data[i].id}`,body)
         handlefetch();
     }
 
-    return(
+    return(       
         <div className="m-2">
             <h1>Todo List</h1>
-            <input onChange={handleinput} Placeholder="enter ur todolist"/>
+            <input onChange={handleinput}Placeholder="enter ur todolist"/>
             <button onClick={handlesend} className="btn btn-primary ms-3">Add</button>
            
             
-           {data.map((da) =>(
+           {data.map((da,i) =>(
                 <div className="d-flex mt-5" key={i}>
-                    <h1>{da.task}</h1>
+                    <h2>{da.task}</h2>
+                    
 
-                    <span onClick={() => handleedit(da.i)} className="m-2"><MdEdit />
+
+                    <span onClick={()=> hndleedit(i)} className="m-2"><MdEdit />
                     </span>
 
-                    <span onClick={()=> handledelete(da.id)} className="m-2"><MdDeleteForever/>
+                    <span onClick={()=>handledelete(da.id)} className="m-2"><MdDeleteForever/>
                     </span>
 
 
